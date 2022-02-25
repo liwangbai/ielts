@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">雅思听力</string>
+    <string name="ielts">雅思</string>
+    <string name="me">我的</string>
+    <string name="appid">241</string>
+    <string name="image_desc1">This is paper list item\'s icon</string>
+    <string name="image_desc2">This is section list item\'s icon</string>
+    <string name="about_us">关于我们</string>
+    <string name="rule">条款/协议</string>
+    <string name="version">版本号: 9.0.1</string>
+    <string name="about_intro1">雅思听力是一款高品质听力软件、考试完美助手,涵盖了雅思听力考试的应用，堪称雅思考试的必备\'神器\'。</string>
+    <string name="about_intro2">主要创意与功能设置如下:</string>
+    <string name="about_intro3">1.历年真题,搜集了剑桥雅思5–11听力真题，并全部配有相应解析，逐一解决所有听力困惑针对不同英语程度的学习者提供中英切换功能，可以随意切换听力原文模式。</string>
+    <string name="about_intro4">2.原文，听力，练习全方面测试你的真实英语水平每一个模块都由全方位的名师出题，而且所采用的习题都是直接或间接来自理念真题,力求测试结果无限接近您的真实水平练习后可以查看解析。</string>
+    <string name="about_intro5">如果有任何问题或者建议,欢迎您发送邮件至373346513@qq.com,谢谢</string>
+    <string name="exercise">做题</string>
+    <string name="img_desc_back">this is go back btn</string>
+    <string name="none">暂无</string>
+    <string name="en_cn">中英</string>
+    <string name="seekbar_time">00:00</string>
+    <string name="loading">加载中...</string>
+    <string name="ques_tip">请输入您的答案</string>
+    <string name="split_sign">++</string>
+    <string name="next_ques">下一题</string>
+    <string name="pre_ques">上一题</string>
+    <string name="show_explain">查看解析</string>
+    <string name="explain_title">解析内容</string>
+    <string name="i_know">知道了</string>
+</resources>

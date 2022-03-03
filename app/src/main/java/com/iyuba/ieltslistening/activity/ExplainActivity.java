@@ -34,7 +34,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class ExplainActivity extends AppCompatActivity implements View.OnClickListener{
+public class ExplainActivity extends BaseActivity implements View.OnClickListener{
 
     private static final String TAG = "ExplainActivity";
     private Map<Integer, Set<String>> answerMap1;  // 用户选择题的答案

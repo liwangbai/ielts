@@ -2,6 +2,15 @@ plugins {
     id 'com.android.application'
 }
 
+apply plugin: 'com.mob.sdk'
+MobSDK {
+    appKey "1eb7ac760ef35"
+    appSecret "8d048a2724bf43f522c1596d3e42e730"
+    SMSSDK {
+    }
+    SecVerify {}
+}
+
 android {
     signingConfigs {
         debug {
@@ -23,8 +32,8 @@ android {
         applicationId "com.iyuba.ieltslistening"
         minSdk 22
         targetSdk 31
-        versionCode 1000
-        versionName "9.0.1"
+        versionCode 1001
+        versionName "9.1.0305"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -58,6 +67,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation fileTree(include: ['*.?ar'], dir: 'libs')
+    // 圆形ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // xml解析需要
+    implementation group: 'org.dom4j', name: 'dom4j', version: '2.1.1'
     // 网络请求模块
     implementation 'com.squareup.okhttp3:okhttp:4.9.2'
     // fastjson

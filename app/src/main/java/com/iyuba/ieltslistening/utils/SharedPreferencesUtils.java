@@ -5,12 +5,12 @@ import android.content.SharedPreferences;
 
 public class SharedPreferencesUtils {
 
-    public final static String APP_INFO = "app_info";
-    public final static String USER_INFO = "user_info";
+    public final static String APP_INFO = "appInfo";
+    public final static String USER_INFO = "userInfo";
 
     public static String getString(Context context, String name, String key) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(name, 0);
-        System.out.println("此次操作的对象地址 ----------->" + sharedPreferences);
+        // System.out.println("此次操作的对象地址 ----------->" + sharedPreferences);
         return sharedPreferences.getString(key, "");
     }
 
@@ -39,6 +39,13 @@ public class SharedPreferencesUtils {
     public static void setBoolean(Context context, String name, String key, boolean value) {
         SharedPreferences sharedPreferences = context.getSharedPreferences(name, 0);
         sharedPreferences.edit().putBoolean(key, value).apply();
+    }
+
+    public static void removeSome(Context context, String name, String[] keys) {
+        SharedPreferences.Editor edit = context.getSharedPreferences(name, 0).edit();
+        for (String key : keys)
+            edit.remove(key);
+        edit.apply();
     }
 
 }

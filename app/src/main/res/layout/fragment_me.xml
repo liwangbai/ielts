@@ -1,9 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF5F5F5"
     android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/userinfo_ly"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+        <cn.smssdk.ui.companent.CircleImageView
+            android:id="@+id/u_head"
+            android:layout_width="60dp"
+            android:layout_height="60dp"/>
+        <TextView
+            android:id="@+id/u_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:text="@string/username"
+            android:textColor="@color/font_color"
+            android:textStyle="bold"
+            tools:ignore="RtlHardcoded" />
+        <TextView
+            android:id="@+id/change_info"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/change_info"
+            android:textColor="#FF7C7C7C"/>
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/to"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_login"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/shallow_gray"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/login"/>
+        <TextView
+            android:id="@+id/tv_login"
+            android:padding="10dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="@color/font_color"
+            android:text="@string/login"/>
+        <ImageView
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="10dp"
+            android:scaleType="fitStart"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/to"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ly_about"
@@ -73,5 +149,6 @@
             android:src="@mipmap/to"/>
 
     </LinearLayout>
+
 
 </LinearLayout>

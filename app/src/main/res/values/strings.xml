@@ -3,6 +3,8 @@
     <string name="ielts">雅思</string>
     <string name="me">我的</string>
     <string name="appid">241</string>
+    <string name="app_enname">ielts</string>
+    <string name="warning">注销账号后将无法登录，并且将不再会保存个人信息，账号信息将会被清除，确定要注销账号吗？</string>
     <string name="image_desc1">This is paper list item\'s icon</string>
     <string name="image_desc2">This is section list item\'s icon</string>
     <string name="about_us">关于我们</string>
@@ -26,4 +28,16 @@
     <string name="show_explain">查看解析</string>
     <string name="explain_title">解析内容</string>
     <string name="i_know">知道了</string>
+    <string name="login">登录</string>
+    <string name="sec_login">手机号一键登录</string>
+    <string name="forget_pwd">忘记密码</string>
+    <string name="password">密码</string>
+    <string name="account">账号</string>
+    <string name="change_info">修改资料</string>
+    <string name="username">用户名</string>
+    <string name="enter">〉</string>
+    <string name="log_off">注销账号</string>
+    <string name="use_rule">使用条款</string>
+    <string name="and">和</string>
+    <string name="privacy">隐私政策</string>
 </resources>

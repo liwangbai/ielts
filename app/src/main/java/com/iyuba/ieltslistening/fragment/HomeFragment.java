@@ -19,6 +19,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.iyuba.ieltslistening.R;
 import com.iyuba.ieltslistening.adapter.HomeAdapter;
+import com.iyuba.ieltslistening.components.MyApplication;
 import com.iyuba.ieltslistening.dao.TestPaperDao;
 import com.iyuba.ieltslistening.dao.impl.TestPaperDaoImpl;
 import com.iyuba.ieltslistening.pojo.TestPaper;
@@ -43,17 +44,15 @@ public class HomeFragment extends Fragment {
 
     private static final String TAG = "HomeFragment";
 
-    private Context context;
+    private final Context context;
     private List<TestPaper> dataList;
     private TestPaperDao paperDao;
     private SmartRefreshLayout smartRefreshLayout;
     private RecyclerView rv;
     private HomeAdapter adapter;
 
-    public HomeFragment() {}
-
-    public HomeFragment(Context context) {
-        this.context = context;
+    public HomeFragment() {
+        context = MyApplication.getContext();
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -70,7 +69,7 @@ public class HomeFragment extends Fragment {
                 // 2017年的还没有题目，全部隐藏了; 2022.02.21，接口控制了,客户端不用判断了
                 // if (!jo.getString("testTime").contains("2017")) {}
             }
-            adapter = new HomeAdapter(getContext(), dataList);
+            adapter = new HomeAdapter(MyApplication.getContext(), dataList);
             rv.setAdapter(adapter);
             Log.d(TAG, "list装载完成: " + dataList.size());
             SharedPreferencesUtils.setBoolean(requireContext(), SharedPreferencesUtils.APP_INFO, "localExist", true);

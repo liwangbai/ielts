@@ -9,6 +9,7 @@ public class ConstUtil {
     public static int REFRESH_FINISH = 2;  // 刷新成功
     public static int GET_MORE_FINISH = 3;  // 下拉加载成功
     public static int UPDATE_RECYCLER = 4;  // 更新recyclerView中的显示
+    public static int PWD_ERROR = 5;  // 账号或密码错误
 
     public static Map<Integer, Set<String>> answerMap1;
     public static Map<Integer, String> answerMap2;

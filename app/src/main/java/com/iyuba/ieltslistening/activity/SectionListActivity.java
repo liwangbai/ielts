@@ -39,7 +39,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class SectionListActivity extends AppCompatActivity {
+public class SectionListActivity extends BaseActivity {
 
     private static final String TAG = "SectionListActivity";
     private int paperId;
@@ -102,6 +102,7 @@ public class SectionListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_section_list);
         bindView();
+        Log.d(TAG, "onCreate: =========" + getTaskId());
         paperId = getIntent().getIntExtra("paperId", 0);
         testTime = Integer.parseInt(getIntent().getStringExtra("testTime"));
         ActionBar actionBar = getSupportActionBar();

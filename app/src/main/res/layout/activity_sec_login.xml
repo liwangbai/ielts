@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".activity.SecLoginActivity">
+
+    <Button
+        android:id="@+id/sec_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/sec_login"/>
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/cb_obey"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="-16dp"
+            android:gravity="center"
+            android:textColor="@color/primary" />
+
+        <TextView
+            android:id="@+id/rule_tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/cb_obey"
+            android:text="@string/app_name" />
+
+        <TextView
+            android:id="@+id/rule_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/rule_tv1"
+            android:autoLink="all"
+            android:text="@string/use_rule"
+            android:textColor="@color/link_new" />
+        <TextView
+            android:id="@+id/rule_tv3"
+            android:layout_toEndOf="@id/rule_tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/and"/>
+        <TextView
+            android:id="@+id/rule_tv4"
+            android:layout_toEndOf="@id/rule_tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/link_new"
+            android:text="@string/privacy"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/to_pwd_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="账号密码登录>>"/>
+
+</LinearLayout>

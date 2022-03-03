@@ -13,24 +13,33 @@
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/actionbar_content.xml" value="0.11141304347826086" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/actionbar_layout.xml" value="0.16666666666666666" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/actionbar_section_list.xml" value="0.10597826086956522" />
-        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_about.xml" value="0.3333333333333333" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_about.xml" value="0.16666666666666666" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_change_info.xml" value="0.22" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_content.xml" value="0.21934369602763384" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_exercise.xml" value="0.22" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_explain.xml" value="0.14666666666666667" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_sec_login.xml" value="0.3333333333333333" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/activity_section_list.xml" value="0.14266304347826086" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/adapter_paper_list_item.xml" value="0.3333333333333333" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/adapter_section_list_item.xml" value="0.3333333333333333" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/adapter_sentence_item.xml" value="0.22" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/change_head.xml" value="0.10914855072463768" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_big_img.xml" value="0.11005434782608696" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_change_name.xml" value="0.13858695652173914" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_explain.xml" value="0.1" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_initmate.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_logoff.xml" value="0.13858695652173914" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_logoff2.xml" value="0.13858695652173914" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_waiting.xml" value="0.12092391304347826" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_waiting_transparent.xml" value="0.12092391304347826" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/dialog_word_trans.xml" value="0.1" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/fragment_home.xml" value="0.2890625" />
-        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/fragment_me.xml" value="0.3333333333333333" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/fragment_me.xml" value="0.22" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/privacy_pop.xml" value="0.1" />
         <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/layout/ques_choose_item.xml" value="0.22" />
+        <entry key="..\:/WorkSpace/AndroidStudioWorkSpace/IELTS/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>
     </option>
   </component>

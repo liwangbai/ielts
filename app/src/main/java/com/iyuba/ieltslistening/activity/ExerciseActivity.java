@@ -22,6 +22,7 @@ import com.iyuba.ieltslistening.R;
 import com.iyuba.ieltslistening.adapter.QuesChooseAdapter;
 import com.iyuba.ieltslistening.pojo.ChooseItem;
 import com.iyuba.ieltslistening.pojo.Question;
+import com.iyuba.ieltslistening.utils.ActivityController;
 import com.iyuba.ieltslistening.utils.ConstUtil;
 import com.iyuba.ieltslistening.utils.DensityUtil;
 import com.iyuba.ieltslistening.utils.ToastUtil;
@@ -32,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class ExerciseActivity extends AppCompatActivity implements View.OnClickListener {
+public class ExerciseActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "ExerciseActivity";
     private String explainStr;  // 解析json数组的字符串
@@ -79,6 +80,7 @@ public class ExerciseActivity extends AppCompatActivity implements View.OnClickL
             loadUI();
         }
         Log.d(TAG, "onCreate:  ----- " + "[]".equals(quesStr));
+        ActivityController.showCurActivity();
     }
 
     private void setMyActionBar(){

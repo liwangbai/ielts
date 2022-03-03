@@ -88,4 +88,12 @@
         android:layout_marginTop="10dp"
         android:textSize="14sp"
         android:text="@string/about_intro5"/>
+
+    <Button
+        android:id="@+id/log_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/log_off"/>
+
 </LinearLayout>

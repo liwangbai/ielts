@@ -19,13 +19,23 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.iyuba.ieltslistening.R;
 import com.iyuba.ieltslistening.activity.AboutActivity;
+import com.iyuba.ieltslistening.activity.ChangeInfoActivity;
+import com.iyuba.ieltslistening.activity.SecLoginActivity;
+import com.iyuba.ieltslistening.utils.SharedPreferencesUtils;
+
+import cn.smssdk.ui.companent.CircleImageView;
 
 
 public class MeFragment extends Fragment implements View.OnClickListener{
 
     private PopupWindow pop;
+    private CircleImageView uHead;
+    private TextView uName;
+    private LinearLayout userinfoLy;
+    private TextView tvLogin;
 
     public MeFragment() {}
 
@@ -34,11 +44,19 @@ public class MeFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
 
+        uHead = view.findViewById(R.id.u_head);
+        uName = view.findViewById(R.id.u_name);
+        userinfoLy = view.findViewById(R.id.userinfo_ly);
+        tvLogin = view.findViewById(R.id.tv_login);
+        TextView changeInfo = view.findViewById(R.id.change_info);
         LinearLayout lyAbout = view.findViewById(R.id.ly_about);
         LinearLayout lyRule = view.findViewById(R.id.ly_rule);
+        LinearLayout lyLogin = view.findViewById(R.id.ly_login);
 
+        changeInfo.setOnClickListener(this);
         lyAbout.setOnClickListener(this);
         lyRule.setOnClickListener(this);
+        lyLogin.setOnClickListener(this);
 
         return view;
     }
@@ -49,8 +67,20 @@ public class MeFragment extends Fragment implements View.OnClickListener{
         if (id == R.id.ly_about) {
             Intent intent = new Intent(requireContext(), AboutActivity.class);
             requireContext().startActivity(intent);
-        }else {
+        }else if (id == R.id.ly_login) {
+            if (SharedPreferencesUtils.getBoolean(getContext(), SharedPreferencesUtils.USER_INFO, "isLogin")) {
+                SharedPreferencesUtils.setBoolean(getContext(), SharedPreferencesUtils.USER_INFO, "isLogin", false);;
+                userinfoLy.setVisibility(View.GONE);
+                tvLogin.setText("登录");
+            }else {
+                Intent intent = new Intent(requireContext(), SecLoginActivity.class);
+                requireContext().startActivity(intent);
+            }
+        }else if (id == R.id.ly_rule){
             showPrivacyPop();
+        }else if (id == R.id.change_info) {
+            Intent intent = new Intent(getContext(), ChangeInfoActivity.class);
+            getActivity().startActivity(intent);
         }
     }
 
@@ -111,6 +141,20 @@ public class MeFragment extends Fragment implements View.OnClickListener{
         if (pop != null && pop.isShowing()) {
             pop.dismiss();
             pop = null;
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (SharedPreferencesUtils.getBoolean(getContext(), SharedPreferencesUtils.USER_INFO,"isLogin")) {
+            userinfoLy.setVisibility(View.VISIBLE);
+            Glide.with(getContext()).load(SharedPreferencesUtils.getString(getContext(), SharedPreferencesUtils.USER_INFO, "head")).into(uHead);
+            tvLogin.setText("退出登录");
+            uName.setText(SharedPreferencesUtils.getString(getContext(), SharedPreferencesUtils.USER_INFO, "nickname"));
+        }else {
+            userinfoLy.setVisibility(View.GONE);
+            tvLogin.setText("登录");
         }
     }
 }

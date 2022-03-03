@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.iyuba.ieltslistening.R;
 import com.iyuba.ieltslistening.activity.SectionListActivity;
+import com.iyuba.ieltslistening.components.MyApplication;
 import com.iyuba.ieltslistening.pojo.TestPaper;
 
 
@@ -53,10 +54,11 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         String testTime = dataList.get(position).getTestTime();
 
         holder.ly.setOnClickListener(v -> {
-            Intent intent = new Intent(context, SectionListActivity.class);
+            Intent intent = new Intent(MyApplication.getContext(), SectionListActivity.class);
             intent.putExtra("paperId", paperId);
             intent.putExtra("testTime", testTime);
-            context.startActivity(intent);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            MyApplication.getContext().startActivity(intent);
         });
     }
 

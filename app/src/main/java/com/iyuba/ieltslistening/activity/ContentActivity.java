@@ -42,7 +42,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class ContentActivity extends AppCompatActivity implements View.OnClickListener {
+public class ContentActivity extends BaseActivity implements View.OnClickListener {
 
     private static final String TAG = "ContentActivity";
     private long sectionId;

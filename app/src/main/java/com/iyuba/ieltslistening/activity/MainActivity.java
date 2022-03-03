@@ -16,6 +16,7 @@ import android.text.SpannableStringBuilder;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -26,11 +27,18 @@ import com.iyuba.ieltslistening.R;
 import com.iyuba.ieltslistening.fragment.HomeFragment;
 import com.iyuba.ieltslistening.fragment.MeFragment;
 import com.iyuba.ieltslistening.utils.SharedPreferencesUtils;
+import com.mob.MobSDK;
+import com.mob.secverify.GetTokenCallback;
+import com.mob.secverify.SecVerify;
+import com.mob.secverify.common.exception.VerifyException;
+import com.mob.secverify.datatype.VerifyResult;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends BaseActivity implements View.OnClickListener{
 
+
+    private static final String TAG = "MainActivity";
     private long touchTime = 0;  // 在首页按退出的时间
     private TextView tvHome;
     private TextView tvMe;
@@ -43,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d(TAG, "onCreate: =========" + getTaskId());
         initBySP();
         bindView();
         tvHome.performClick();
@@ -56,6 +65,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (!initAPP) {
             initDB();
             startDialog();
+        }else {
+            // 提交mob隐私协议
+            MobSDK.submitPolicyGrantResult(true,null);
+            // 秒验 -- 预登录
+            SecVerify.preVerify(new GetTokenCallback() {
+                @Override
+                public void onComplete(VerifyResult verifyResult) {
+                    if (verifyResult != null)
+                        Log.d(TAG, "onComplete: ----------->" + verifyResult.getOpToken());
+                }
+
+                @Override
+                public void onFailure(VerifyException e) {
+                    Log.d(TAG, "onFailure:  -----------> " + e.toString());
+                }
+            });
         }
     }
 
@@ -153,6 +178,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // 初始化友盟SDK (需用户同意隐私政策后调用)
                 // UMConfigure.init(this, UMConfigure.DEVICE_TYPE_PHONE, "");
                 SharedPreferencesUtils.setBoolean(this, SharedPreferencesUtils.APP_INFO, "initAPP", true);
+                // 提交mob隐私协议
+                MobSDK.submitPolicyGrantResult(true,null);
+                // 秒验 -- 预登录
+                SecVerify.preVerify(new GetTokenCallback() {
+                    @Override
+                    public void onComplete(VerifyResult verifyResult) {
+                        if (verifyResult != null)
+                            Log.d(TAG, "onComplete: ----------->" + verifyResult.getOpToken());
+                    }
+
+                    @Override
+                    public void onFailure(VerifyException e) {
+                        Log.d(TAG, "onFailure:  -----------> " + e.toString());
+                    }
+                });
                 // 请求相关权限
                 requestPermission();
                 alertDialog.cancel();
@@ -214,7 +254,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             this.setTitle("雅思听力");
             tvHome.setSelected(true);
             if(homeFragment == null){
-                homeFragment = new HomeFragment(this);
+                homeFragment = new HomeFragment();
                 fTransaction.add(R.id.ly_main, homeFragment);
             }else{
                 fTransaction.show(homeFragment);
